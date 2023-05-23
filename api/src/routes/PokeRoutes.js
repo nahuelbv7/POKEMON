@@ -1,9 +1,9 @@
 const { Router } = require('express');
-
+const  getPokemons  = require("../controllers")
 const router = Router();
 
 //Ruta para traer todos los pokemons
-router.get("/pokemons")
+router.get("/pokemons", getPokemons)
 
 
 //Ruta para traer pokemons por id
