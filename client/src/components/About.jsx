@@ -1,6 +1,8 @@
+import styles from "../styles/About.module.css"
+
 export const About = () => {
     return (
-        <div>
+        <div className={styles.dsa}>
             Pokemon API, HENRY PROYECT
         </div>
     )

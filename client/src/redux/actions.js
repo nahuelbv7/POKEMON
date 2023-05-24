@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_POKEMONS, GET_ID } from "./actions-types";
+import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE } from "./actions-types";
 
 export const getPokemons = () => {
 
@@ -24,5 +24,18 @@ export const getPokemons = () => {
             } catch(error) {
                 console.log(error.message);
             }
+        }
+    }
+
+
+    export const nextPage = () => {
+        return {
+            type: NEXT_PAGE
+        }
+    }
+
+    export const prevPage = () => {
+        return {
+            type: PREV_PAGE
         }
     }

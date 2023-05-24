@@ -1,8 +1,9 @@
-import { GET_POKEMONS, GET_ID } from "./actions-types";
+import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE  } from "./actions-types";
 
 const initialState = {
     pokemon: [],
-    detail: []
+    detail: [],
+    numPage: 1,
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +18,17 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 detail: action.payload
             }    
+        case NEXT_PAGE:
+            return {
+                ...state,
+                numPage: state.numPage + 1   // Se aumenta el número de página
+            }
+    
+        case PREV_PAGE:
+            return {
+                ...state,
+                numPage: state.numPage - 1 // Se disminuye el número de página
+            }
 
         default:
             return state;
