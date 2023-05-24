@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    background-color: rgb(128, 17, 226);
+    opacity: 0.8;
+    border-radius: 20px;
+    padding: 80px 15px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
