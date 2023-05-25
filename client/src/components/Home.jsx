@@ -7,10 +7,10 @@ import { useSelector } from "react-redux";
 export const Home = ({ pokemones }) => {
   const {numPage} = useSelector((state) => state) 
   
-  let init = (numPage-1) * 10 
-  let end = numPage * 10 
+  let init = (numPage-1) * 12
+  let end = numPage * 12 
 
-  let cantPage = Math.ceil(pokemones.length / 10);
+  let cantPage = Math.ceil(pokemones.length / 12);
 
   
   return (

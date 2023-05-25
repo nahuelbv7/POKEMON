@@ -1,17 +1,16 @@
 .container {
     display: flex;
     flex-direction: column;
+   
 }
 
 .pokemons {
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    border-radius: 15px;
     flex-wrap: wrap;
-    gap: 1em;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    gap: 4em;
+    margin-top: 6%;
+    margin-bottom: 4%;
 }
 
 .jhon {

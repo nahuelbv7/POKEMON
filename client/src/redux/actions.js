@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE } from "./actions-types";
+import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE, SEARCH_POKEMON } from "./actions-types";
 
 export const getPokemons = () => {
 
@@ -37,5 +37,17 @@ export const getPokemons = () => {
     export const prevPage = () => {
         return {
             type: PREV_PAGE
+        }
+    }
+
+    export const getPokemonsByName = (name) => {
+        return async function(dispatch) {
+            try{
+                const response = await axios.get(`http://localhost:3001/pokemons/?name=${name}`)
+                console.log(response.data)
+                dispatch({type: SEARCH_POKEMON, payload: response.data})
+            }catch(error){
+                console.log(error)
+            }
         }
     }

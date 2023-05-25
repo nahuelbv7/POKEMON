@@ -1,8 +1,48 @@
+.img {
+    height: 18em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f57c00;
+}
+
+.imgsize {
+    height: 15em;
+}
+
+.stats {
+    background-color: #000;
+    color: #fff;
+    padding: 2em;
+}
+
 .h11 {
-    color: black;
-    text-transform: uppercase
+    font-size: 2em;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.hw {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.h2,
+.h3 {
+    font-size: 1.5em;
+    margin: 0;
 }
 
 .h3 {
-    color: black
+    margin-bottom: 1em;
+}
+
+.type {
+    color: #fff;
+    background-color: #f57c00;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
 }

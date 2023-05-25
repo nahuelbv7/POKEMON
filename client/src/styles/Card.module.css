@@ -17,7 +17,7 @@ body {
     position: relative;
     max-width: 260px;
     width: 35%;
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(48, 47, 47);
     border-radius: 5px;
   }
 
@@ -77,6 +77,6 @@ body {
     margin-left: 25%;
     color: white;
     background-color: red;
-    max-width: 130px;
+    max-width: 140px;
     border-radius: 10px;
   }

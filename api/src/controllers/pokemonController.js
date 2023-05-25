@@ -29,7 +29,7 @@ const pokeApi = async (name) => {
       }
     } else {
       const pokemonsApi = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=160"
+        "https://pokeapi.co/api/v2/pokemon?limit=168"
       );
       const subRequest = pokemonsApi.data.results.map((e) => axios.get(e.url));
       let promiseRequest = await Promise.all(subRequest);
@@ -83,7 +83,6 @@ const pokeDb = async (name) => {
     
     }
   } catch {
-    // res.status(500).json("Pokemon not found");//c esto no encuentra los pokemons
     console.log("Pokemon not found in db");
   }
 };
@@ -109,13 +108,9 @@ const getPokemons = async (req, res) => {
       res.send(pokemonDbAndApi);
   }catch(error){
     await getPokemons();
-    // await res.status(400).send(error.message); //que pasa si no encuentro el pokemon
+ 
   };
 };
-
-
-
-// const getPokemonByName =async (req, res) => {};
 
 
 const getPokemonById = async (req, res) => {
