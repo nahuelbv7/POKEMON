@@ -24,7 +24,7 @@ export const NavBar = () => {
         <nav className={styles.navbar}>
             <Link to="/home"><img src={logo} alt="Logo" className={styles.logo} /></Link> 
             <SearchBar onSearch={handleSearch} />
-            <button className={styles.button} onClick={handleDeleteSearch}>DELETE SEARCH</button>
+            <button className={styles.button} onClick={handleDeleteSearch}>Delete Search</button>
             <ul className={styles.navbarMenu}>
                 <li className={styles.navbarItem}>
                     <Link to="/home" className={styles.h1}>Home</Link>
