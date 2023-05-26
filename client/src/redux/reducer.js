@@ -1,4 +1,4 @@
-import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE, SEARCH_POKEMON  } from "./actions-types";
+import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE, SEARCH_POKEMON, AZORDER, ATTACKORDER, CREATEPOKEMON  } from "./actions-types";
 
 const initialState = {
     pokemon: [],
@@ -35,6 +35,54 @@ const reducer = (state = initialState, action) => {
             pokemon: action.payload,   
             };
 
+        case AZORDER:
+            const newOrder = state.pokemon.sort((a, b) => {
+                if(a.name > b.name) {
+                    return "ascendent" === action.payload ? 1 : -1; 
+                    }
+                if(a.name < b.name) {
+                    return "descendent" === action.payload ? 1 : -1; 
+                    }
+                    return 0;
+                })
+                return {
+                    ...state,
+                    order: newOrder,    
+                }
+
+        case ATTACKORDER:
+
+            let newP = [];
+            
+            if( action.payload ==="ascendent" )
+            {
+                newP = state.pokemon.sort((a, b) => {
+
+                    if(a.attack < b.attack) {
+                        return 1;                       
+                    }
+                    if(a.attack > b.attack) {
+                        return -1;
+                    }
+                        return 0;
+                 });
+                } else {
+                newP = state.pokemon.sort((a, b) => {
+                    if(a.attack < b.attack) { 
+                    return -1;
+                    }
+                    if(a.attack > b.attack) {
+                    return  1;
+                    }
+                    return 0;
+            
+                    });
+                }
+                return {
+                ...state,
+                attack: [...newP],
+                };
+               
         default:
             return state;
     }

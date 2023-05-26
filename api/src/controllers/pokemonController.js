@@ -1,5 +1,6 @@
 const axios = require("axios");
-const { Pokemon, Type } = require("../db");
+const { Op } = require("sequelize");
+const { Pokemon, Type } = require("../db.js")
 
 const pokeApi = async (name) => {
   try {
@@ -83,7 +84,7 @@ const pokeDb = async (name) => {
     
     }
   } catch {
-    console.log("Pokemon not found in db");
+    console.log("ALAMOS CAUSITA");
   }
 };
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE, SEARCH_POKEMON } from "./actions-types";
+import { GET_POKEMONS, GET_ID, NEXT_PAGE, PREV_PAGE, SEARCH_POKEMON, AZORDER, ATTACKORDER, CREATEPOKEMON } from "./actions-types";
 
 export const getPokemons = () => {
 
@@ -51,3 +51,27 @@ export const getPokemons = () => {
             }
         }
     }
+
+    export const orderAz = (orderaz) => {
+        return {
+          type: AZORDER,
+          payload: orderaz
+        }
+    }
+
+    export const filterAttack = (attack) => {
+        return {
+          type: ATTACKORDER,
+          payload: attack
+        }
+      }
+      
+      export const createPokemon = () => {
+        return async function(dispatch) {
+            try {
+                let response = await axios.post("http://localhost:3001/pokemons")
+            }catch{
+                alert("Pokemon no creado")
+            }
+        }
+      }
